@@ -19,9 +19,8 @@
             </div>
             @endif
             <form method="POST" action="{{route('user.questions.update', $question->id)}}">
-              <iput type="hidden" name="_method" value="POST">
+              {{ csrf_field() }}
               <iput type="hidden" name="_token">
-                {{ csrf_field() }}
                 <div class="form-group">
                   <label for="title">Title</label>
                   <input type="text" class="form-control" id="title" name="title" value="{{old('title', $question->title)}}"/>

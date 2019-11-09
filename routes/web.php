@@ -32,8 +32,9 @@ Route::delete('/admin/questions/{id}', 'Admin\QuestionController@destroy')->name
 
 Route::get('/user/questions', 'User\QuestionController@index')->name('user.questions.index');
 Route::get('/user/questions/create', 'User\QuestionController@create')->name('user.questions.create');
+
 Route::get('/user/questions/{id}', 'User\QuestionController@show')->name('user.questions.show');
 Route::post('/user/questions/store', 'User\QuestionController@store')->name('user.questions.store');
 Route::get('/user/questions/{id}/edit', 'User\QuestionController@edit')->name('user.questions.edit');
-Route::put('/user/questions/{id}', 'User\QuestionController@update')->name('user.questions.update');
-Route::post('/user/questions/{id}', 'User\QuestionController@requestDelete')->name('user.questions.requestDelete');
+Route::post('/user/questions/{id}', 'User\QuestionController@update')->name('user.questions.update');
+Route::put('/user/questions/{id}', 'User\QuestionController@requestDelete')->name('user.questions.requestDelete');

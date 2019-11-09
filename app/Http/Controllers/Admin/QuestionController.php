@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Question;
+use Auth;
 
 class QuestionController extends Controller
 {
@@ -64,6 +65,7 @@ class QuestionController extends Controller
 
         $question->title = $request->input('title');
         $question->info = $request->input('info');
+        $question->user_id = Auth::user()->getId();
 
         $question->save();
 
@@ -119,6 +121,7 @@ class QuestionController extends Controller
       $question->title = $request->input('title');
       $question->info = $request->input('info');
 
+
       $question->save();
 
       return redirect()->route('admin.questions.index');
@@ -137,6 +140,6 @@ class QuestionController extends Controller
 
       $question->delete();
 
-      return redirect()->route('admin.questions.index');
+      return redirect()->route('admin.questions.deleteRequests');
     }
 }

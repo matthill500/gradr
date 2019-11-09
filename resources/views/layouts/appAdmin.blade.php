@@ -46,8 +46,17 @@
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
+                <a class="navbar-brand" href="{{ url('/admin/home') }}">
+                  Home
+                </a>
+                <a class="navbar-brand" href="{{ url('/admin/questions') }}">
+                  My Questions
+                </a>
                 <a class="navbar-brand" href="#">
-                    Admin
+                  My Answers
+                </a>
+                <a class="navbar-brand" href="/admin/deleteRequests">
+                  Delete Requests
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>

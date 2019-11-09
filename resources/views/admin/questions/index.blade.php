@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.appAdmin')
 
 @section('content')
 <div class="container">
@@ -6,7 +6,7 @@
     <div class="col-md-12">
       <div class="card">
         <div class="card-header">
-          Questions
+          My Questions
           <a href="{{route('admin.questions.create')}}" class="btn btn-primary float-right">Add</a>
         </div>
         <div class="card-body">
@@ -20,6 +20,7 @@
            </thead>
            <tbody>
              @foreach ($questions as $question)
+             @if($question->user_id === Auth::user()->id)
              <tr data-id="{{$question->id}}">
                <td>{{ substr($question->title,'0','20') }}</td>
                <td>{{ substr($question->info,'0','40') }}</td>
@@ -32,6 +33,9 @@
                     <button type="submit" class="form-control btn btn-danger">Delete</a>
                  </form>
                </td>
+
+               @endif
+
              @endforeach
            </tbody>
          </table>
