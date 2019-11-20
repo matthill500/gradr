@@ -38,3 +38,11 @@ Route::post('/user/questions/store', 'User\QuestionController@store')->name('use
 Route::get('/user/questions/{id}/edit', 'User\QuestionController@edit')->name('user.questions.edit');
 Route::post('/user/questions/{id}', 'User\QuestionController@update')->name('user.questions.update');
 Route::put('/user/questions/{id}', 'User\QuestionController@requestDelete')->name('user.questions.requestDelete');
+
+Route::get('/admin/students', 'Admin\StudentController@index')->name('admin.students.index');
+Route::get('/admin/students/create', 'Admin\StudentController@create')->name('admin.students.create');
+Route::get('/admin/students/{id}/show', 'Admin\StudentController@show')->name('admin.students.show');
+Route::post('/admin/students/store', 'Admin\StudentController@store')->name('admin.students.store');
+Route::get('/admin/students/{id}/edit', 'Admin\StudentController@edit')->name('admin.students.edit');
+Route::put('/admin/students/{id}', 'Admin\StudentController@update')->name('admin.students.update');
+Route::delete('/admin/students/{id}', 'Admin\StudentController@destroy')->name('admin.students.destroy');

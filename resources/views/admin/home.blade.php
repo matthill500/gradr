@@ -14,7 +14,8 @@
                         </div>
                     @endif
 
-                    Welcome to Gradr!! You are logged in as an admin <a href="{{route('admin.questions.index')}}">Questions</a>
+                    Welcome to Gradr!! You are logged in as an admin
+                    <br> View <a href="{{route('admin.students.index')}}">Student Records</a>
                   <br> Learn more <a href="{{route('about')}}">About us</a>
                   <br> Admin <a href="{{route('admin.questions.deleteRequests')}}">Delete Question requests</a>
                 </div>

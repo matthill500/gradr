@@ -49,12 +49,10 @@
                 <a class="navbar-brand" href="{{ url('/admin/home') }}">
                   Home
                 </a>
-                <a class="navbar-brand" href="{{ url('/admin/questions') }}">
-                  My Questions
+                <a class="navbar-brand" href="{{ url('admin/students') }}">
+                  Students
                 </a>
-                <a class="navbar-brand" href="#">
-                  My Answers
-                </a>
+
                 <a class="navbar-brand" href="/admin/deleteRequests">
                   Delete Requests
                 </a>

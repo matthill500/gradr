@@ -20,7 +20,7 @@
            </thead>
            <tbody>
              @foreach ($questions as $question)
-             @if($question->user_id === Auth::user()->id)
+             @if($question->student_id === Auth::user()->student->id)
              <tr data-id="{{$question->id}}">
                <td>{{ substr($question->title,'0','20') }}</td>
                <td>{{ substr($question->info,'0','40') }}</td>

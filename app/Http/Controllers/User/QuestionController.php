@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Question;
 use App\User;
+use App\Student;
 use Auth;
 
 class QuestionController extends Controller
@@ -59,7 +60,7 @@ class QuestionController extends Controller
 
       $question->title = $request->input('title');
       $question->info = $request->input('info');
-      $question->user_id = Auth::user()->getId();
+      $question->student_id = Auth::user()->student->id;
 
       $question->save();
 

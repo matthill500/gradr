@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    Home Page - You are logged in as an ordinary user! <a href="{{route('user.questions.index')}}">Questions</a>
+                    Home Page - You are logged in as a Student user! <a href="{{route('user.questions.index')}}">Questions</a>
                 </div>
             </div>
         </div>
