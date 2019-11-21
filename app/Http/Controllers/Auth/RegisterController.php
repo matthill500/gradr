@@ -3,11 +3,13 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Student;
 use App\User;
 use App\Role;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+
 
 class RegisterController extends Controller
 {
@@ -69,6 +71,15 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+
+        $id = $user->id;
+
+        $student = Student::create([
+           'user_id' => $id,
+           'phone' => $data['phone'],
+           'address' => $data['address'],
+       ]);
+
         $user->roles()->attach(Role::where('name','user')->first());
 
         return $user;

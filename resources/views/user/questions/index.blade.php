@@ -36,7 +36,7 @@
                    @if ($question->delete === 0)
                    <button type="submit" class="form-control btn btn-danger">Request Delete</a>
                   @else ($question->delete === 1)
-                  <button type="submit" class="form-control btn btn-danger">Undo Delete</a>
+                  <button type="submit" class="form-control btn btn-danger">Withdraw Request Delete</a>
                  @endif
                 </form>
 

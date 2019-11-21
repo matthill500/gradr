@@ -18,7 +18,7 @@
               </ul>
             </div>
             @endif
-            <form method="POST" action="{{route('user.questions.update', $question->id)}}">
+            <!-- <form method="POST" action="{{route('user.questions.update', $question->id)}}">
               {{ csrf_field() }}
               <iput type="hidden" name="_token">
                 <div class="form-group">
@@ -31,8 +31,21 @@
                 </div>
                 <a href="{{route('user.questions.index')}}" class="btn btn-link">Cancel</a>
                 <button type="submit" class="btn btn-primary float-right">Submit</button>
+            </form> -->
+            {!! Form::open(['route' => ['user.questions.update', $question->id], 'method' => 'POST']) !!}
+            {{ csrf_field() }}
 
-            </form>
+              <div class="form-group">
+                  {{Form::label('title')}}
+                  {{Form::text('title', $question->title, ['class' => 'form-control'])}}
+              </div>
+              <div class="form-group">
+                  {{Form::label('info')}}
+                  {{Form::textarea('info', $question->info, ['class' => 'form-control'])}}
+              </div>
+              {{  Form::submit('Submit',['class'=>'btn btn-primary'])  }}
+              {!! Form::close() !!}
+
           </div>
         </div>
       </div>
